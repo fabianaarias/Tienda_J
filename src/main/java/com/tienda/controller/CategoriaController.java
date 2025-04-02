@@ -14,19 +14,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 @Controller
-@RequestMapping("/categoria") //localhost/categoria
+@RequestMapping("/categoria")//localhost/categoria
 public class CategoriaController {
   
     @Autowired
     private CategoriaService categoriaService;
     
-    @GetMapping("/listado")  //localhost/categoria/listado
+    @GetMapping("/listado")
     private String listado(Model model) {
         var categorias = categoriaService.getCategorias(false);
-        model.addAttribute("categorias", categorias); //el nombre de todas las categorias (listas)
-        model.addAttribute("totalCategorias",categorias.size()); //5
+        model.addAttribute("categorias", categorias); // el nombre de toads las categorias (lista)
+        model.addAttribute("totalCategorias",categorias.size());//5
         return "/categoria/listado";
     }
+    
     
     @GetMapping("/nuevo")
     public String categoriaNuevo(Categoria categoria) {
@@ -63,4 +64,5 @@ public class CategoriaController {
         model.addAttribute("categoria", categoria);
         return "/categoria/modifica";
     }
+    
 }

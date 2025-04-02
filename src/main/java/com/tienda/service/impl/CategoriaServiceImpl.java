@@ -1,4 +1,5 @@
-package com.tienda.service.impl;
+package com.tienda.service.Impl;
+
 import com.tienda.dao.CategoriaDao; 
 import com.tienda.domain.Categoria; 
 import com.tienda.service.CategoriaService; 
@@ -8,8 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class CategoriaServiceImpl implements CategoriaService 
-{
+public class CategoriaServiceImpl implements CategoriaService {
+
     @Autowired
     private CategoriaDao categoriaDao;
 
@@ -40,5 +41,6 @@ public class CategoriaServiceImpl implements CategoriaService
     public void delete(Categoria categoria) {
         categoriaDao.delete(categoria);
     }
-
+ 
+    
 }
